@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IP Details Finder | RUPOM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.22.9/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex));
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+</script>
+  <style>
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .animate-spin {
+      animation: spin 1s linear infinite;
+    }
+    .fade-in {
+      animation: fadeIn 0.5s ease-in;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="bg-gray-900 transition-colors duration-300 custom-background">
+  <div id="root"></div>
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    const App = () => {
+      const [ip, setIp] = useState('');
+      const [geoData, setGeoData] = useState(null);
+      const [error, setError] = useState('');
+      const [loading, setLoading] = useState(false);
+
+      useEffect(() => {
+        document.documentElement.classList.add('dark');
+      }, []);
+
+      const fetchGeoData = async (ipAddress, retry = false) => {
+        setLoading(true);
+        setError('');
+        try {
+          const response = await fetch(`https://ipapi.co/${ipAddress}/json/`, {
+            method: 'GET',
+            headers: {
+              'Accept': 'application/json',
+            },
+          });
+          const data = await response.json();
+          if (data.error) {
+            const errorMsg = data.reason ? `API Error: ${data.reason}` : 'Invalid IP address or API error';
+            setError(errorMsg);
+            if (data.reason.includes('rate limit') && !retry) {
+              setError('Rate limit exceeded. Retrying in 60 seconds...');
+              setTimeout(() => fetchGeoData(ipAddress, true), 60000);
+            } else {
+              setGeoData(null);
+            }
+          } else {
+            setGeoData({
+              query: data.ip,
+              country: data.country_name,
+              countryCode: data.country,
+              region: data.region_code,
+              regionName: data.region,
+              city: data.city,
+              zip: data.postal || 'N/A',
+              lat: data.latitude,
+              lon: data.longitude,
+              isp: data.org || 'N/A',
+              org: data.org || 'N/A',
+              as: data.asn || 'N/A',
+              timezone: data.timezone,
+            });
+          }
+        } catch (err) {
+          setError(`Failed to fetch data: ${err.message}. Ensure you're running this on a local server (not file://) and check your network.`);
+          setGeoData(null);
+        }
+        setLoading(false);
+      };
+
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        if (ip.trim()) {
+          fetchGeoData(ip);
+        } else {
+          setError('Please enter a valid IP address');
+        }
+      };
+
+      return (
+        <div className="min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8">
+          <div className="w-full max-w-lg">
+            <div className="mb-6">
+              <h1 className="text-3xl font-bold text-white text-center">
+                IP Details Finder
+              </h1>
+            </div>
+            <div className="bg-gray-800 rounded-xl shadow-lg p-6 mb-6">
+              <div className="mb-6">
+                <input
+                  type="text"
+                  value={ip}
+                  onChange={(e) => setIp(e.target.value)}
+                  placeholder="Enter IP address (e.g., 1.1.1.1)"
+                  className="w-full p-3 border border-gray-600 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                />
+                <button
+                  onClick={handleSubmit}
+                  disabled={loading}
+                  className={`mt-3 w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition flex items-center justify-center ${
+                    loading ? 'opacity-50 cursor-not-allowed' : ''
+                  }`}
+                >
+                  {loading ? (
+                    <span className="flex items-center">
+                      <i className="fas fa-spinner animate-spin mr-2"></i> Loading...
+                    </span>
+                  ) : (
+                    <span>Find Details</span>
+                  )}
+                </button>
+              </div>
+              {error && (
+                <div className="bg-red-900 border border-red-700 text-red-200 px-4 py-3 rounded-lg mb-6 fade-in">
+                  {error}
+                  {error.includes('rate limit') && (
+                    <span> Try waiting 60 seconds or use a different IP.</span>
+                  )}
+                  {error.includes('Failed to fetch') && (
+                    <span> Open Developer Tools (F12 &gt; Console) for details.</span>
+                  )}
+                </div>
+              )}
+              {geoData && (
+                <div className="bg-gray-700 rounded-lg p-4 fade-in">
+                  <h2 className="text-xl font-semibold text-white mb-4">IP Details</h2>
+                  <ul className="space-y-3 text-gray-200">
+                    <li className="flex items-center">
+                      <i className="fas fa-network-wired mr-2 text-blue-500"></i>
+                      <strong>IP:</strong> <span className="ml-2">{geoData.query}</span>
+                    </li>
+                    <li className="flex items-center">
+                      <i className="fas fa-globe mr-2 text-blue-500"></i>
+                      <strong>Country:</strong> <span className="ml-2">{geoData.country} ({geoData.countryCode})</span>
+                    </li>
+                    <li className="flex items-center">
+                      <i className="fas fa-map mr-2 text-blue-500"></i>
+                      <strong>Region:</strong> <span className="ml-2">{geoData.regionName} ({geoData.region})</span>
+                    </li>
+                    <li className="flex items-center">
+                      <i className="fas fa-city mr-2 text-blue-500"></i>
+                      <strong>City:</strong> <span className="ml-2">{geoData.city}</span>
+                    </li>
+                    <li className="flex items-center">
+                      <i className="fas fa-mail-bulk mr-2 text-blue-500"></i>
+                      <strong>ZIP:</strong> <span className="ml-2">{geoData.zip}</span>
+                    </li>
+                    <li className="flex items-center">
+                      <i className="fas fa-map-pin mr-2 text-blue-500"></i>
+                      <strong>Latitude:</strong> <span className="ml-2">{geoData.lat}</span>
+                    </li>
+                    <li className="flex items-center">
+                      <i className="fas fa-map-pin mr-2 text-blue-500"></i>
+                      <strong>Longitude:</strong> <span className="ml-2">{geoData.lon}</span>
+                    </li>
+                    <li className="flex items-center">
+                      <i className="fas fa-server mr-2 text-blue-500"></i>
+                      <strong>ISP:</strong> <span className="ml-2">{geoData.isp}</span>
+                    </li>
+                    <li className="flex items-center">
+                      <i className="fas fa-building mr-2 text-blue-500"></i>
+                      <strong>Organization:</strong> <span className="ml-2">{geoData.org}</span>
+                    </li>
+                    <li className="flex items-center">
+                      <i className="fas fa-link mr-2 text-blue-500"></i>
+                      <strong>AS:</strong> <span className="ml-2">{geoData.as}</span>
+                    </li>
+                    <li className="flex items-center">
+                      <i className="fas fa-clock mr-2 text-blue-500"></i>
+                      <strong>Timezone:</strong> <span className="ml-2">{geoData.timezone}</span>
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      );
+    };
+
+    try {
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(<App />);
+    } catch (err) {
+      console.error('Render Error:', err);
+      document.getElementById('root').innerHTML = `
+        <p class="text-red-500 text-center">
+          Failed to load the application. Please check the console (F12 > Console) for details.
+        </p>
+      `;
+    }
+  </script>
+</body>
+</html>
