@@ -507,3 +507,28 @@ body {
     font-size: 1.45rem;
   }
 }
+
+/* ------------------------------
+   ABOUT SECTION
+------------------------------ */
+.about {
+  display: none; /* hidden visually but still indexed by search engines */
+  margin: 22px auto;
+  max-width: 880px;
+  padding: 14px 20px;
+  text-align: center;
+  color: rgba(255,255,255,0.92);
+}
+
+.about h2 {
+  font-size: 1.15rem;
+  letter-spacing: 0.12em;
+  margin-bottom: 12px;
+}
+
+.about p {
+  color: rgba(255,255,255,0.82);
+  line-height: 1.6;
+  margin: 6px 0;
+  max-width: 900px;
+}
