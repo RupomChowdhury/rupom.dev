@@ -1,40 +1,268 @@
 <!DOCTYPE html>
-<html data-lt-installed=true style="" lang="en-US">
+<html lang="en">
 <head>
-	<meta charset=utf-8>
-	<meta name=viewport content="width=device-width,initial-scale=1">
-	<meta name=theme-color content=#000000>
-	<meta name=description content="Personal page of Rupom Chowdhury">
-	<meta property=twitter:image content=/social-image.png>
-	<meta property=og:image content=/social-image.png>
-	<title>Rupom - Personal Page</title>
-	<link rel="stylesheet" href="main.css">
-	<link rel="icon" type="image/x-icon" href="images/favicon.png">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RUPOM — PERSONAL PAGE</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="main.css" />
+
+  <link rel="icon" type="image/png" href="images/favicon.png" />
 </head>
 
 <body>
-	<noscript class=sf-hidden>You need to enable JavaScript to run this app!</noscript>
-	<div id=home class="title bg-transparent bgstyle text-light min-vh-100 d-flex align-content-center align-items-center flex-wrap m-0 jumbotron jumbotron-fluid" style="overflow:hidden;background:rgba(0,0,0,0) linear-gradient(136deg,rgb(68,132,206),rgb(26,215,192),rgb(255,155,17),rgb(155,89,182),rgb(255,127,127),rgb(236,240,241)) repeat scroll 0% 0% / 1200% 1200%">
-	<div id=stars></div>
-		<div class="text-center container">
-			<h1 class=display-1>Shahin Akhtar Rupom</h1>
-			<div class="Typist lead typist">Tech Enthusiast | CSE Student ツ</div>
-			<div class=p-5>
-				<a target=_blank rel="noopener noreferrer" aria-label="Rupom's GitHub" href=https://github.com/RupomChowdhury/><i class="fab fa-github fa-3x socialicons"></i></a>
-				<a target=_blank rel="noopener noreferrer" aria-label="Rupom's LinkedIn" href=https://www.linkedin.com/in/md-shahin-akhtar-rupom/><i class="fab fa-linkedin fa-3x socialicons"></i></a>
-<!--				<a target=_blank rel="noopener noreferrer" aria-label="Rupom's Twitter DMs" href=https://www.twitter.com/><i class="fab fa-twitter fa-3x socialicons"></i></a>-->
-				<a target=_blank rel="noopener noreferrer" aria-label="Rupom's Facebook" href=https://www.facebook.com/web.rupom><i class="fab fa-facebook fa-3x socialicons"></i></a>
-				
-				
-			</div>
-			<!--
-			<a class="btn btn-outline-light btn-lg" role=button aria-label="Learn more about me" href="/" target="_blank">résumé</a>
-			<a class="btn btn-outline-light btn-lg" role=button aria-label="Learn more about me" href="/" target="_blank" style="margin-left: 10px;">blog</a>
-			-->
-			<a class="btn btn-outline-light btn-lg" role=button aria-label="Contact" href="mailto:mail@rupom.dev" target="_blank">Contact ✉</a>
-			<a target=_blank class="btn btn-outline-light btn-lg" role=button aria-label="Resume" href="https://cdn.rupom.dev" style="margin-left: 10px;">Resume 🡫</a>
-			<a target=_blank class="btn btn-outline-light btn-lg" role=button aria-label="Resume" href="https://blog.rupom.dev" style="margin-left: 10px;">Blog ✍️</a>
-		</div>
-	</div>
+  <div class="hero">
+    <canvas id="stars"></canvas>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="badge">PORTFOLIO</div>
+
+      <h1 class="name">MD. SHAHIN AKHTAR RUPOM</h1>
+
+      <p class="tagline">
+        <span id="typewriter" class="tagline-text"></span><span class="caret">▌</span>
+      </p>
+
+      <div class="skills" aria-label="Skills">
+        <span class="skill-tag tag-java">#java</span>
+        <span class="skill-tag tag-spring">#spring</span>
+        <span class="skill-tag tag-spring">#springboot</span>
+        <span class="skill-tag tag-javascript">#javascript</span>
+        <span class="skill-tag tag-php">#php</span>
+        <span class="skill-tag tag-database">#mysql</span>
+        <span class="skill-tag tag-database">#mssql</span>
+        <span class="skill-tag tag-javascript">#nodejs</span>
+        <span class="skill-tag tag-javascript">#express</span>
+        <span class="skill-tag tag-javascript">#html</span>
+        <span class="skill-tag tag-javascript">#css</span>
+        <span class="skill-tag tag-react">#tailwind</span>
+        <span class="skill-tag tag-database">#sql</span>
+        <span class="skill-tag tag-database">#postgresql</span>
+        <span class="skill-tag tag-database">#mongodb</span>
+        <span class="skill-tag tag-cloud">#docker</span>
+        <span class="skill-tag tag-cloud">#kubernetes</span>
+        <span class="skill-tag tag-cloud">#azure</span>
+        <span class="skill-tag tag-spring">#git</span>
+        <span class="skill-tag tag-spring">#github</span>
+        <span class="skill-tag tag-database">#restapi</span>
+        <span class="skill-tag tag-react">#graphql</span>
+        <span class="skill-tag tag-spring">#testing</span>
+        <span class="skill-tag tag-java">#hosting</span>
+      </div>
+
+      <div class="socials">
+        <a
+          class="icon-link"
+          href="javascript:void(0)"
+          data-url="https://github.com/RupomChowdhury"
+          data-target="blank"
+          aria-label="GITHUB"
+        >
+          <i class="fa-brands fa-github"></i>
+        </a>
+
+        <a
+          class="icon-link"
+          href="javascript:void(0)"
+          data-url="https://www.linkedin.com/in/md-shahin-akhtar-rupom"
+          data-target="blank"
+          aria-label="LINKEDIN"
+        >
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+
+        <a
+          class="icon-link"
+          href="javascript:void(0)"
+          data-url="https://www.facebook.com/web.rupom"
+          data-target="blank"
+          aria-label="FACEBOOK"
+        >
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+      </div>
+
+      <div class="hero-buttons">
+        <a
+          class="btn"
+          href="javascript:void(0)"
+          data-url="mailto:mail@rupom.dev"
+          data-target="self"
+          aria-label="Contact via email"
+        >
+          CONTACT ✉
+        </a>
+
+        <a
+          class="btn"
+          href="javascript:void(0)"
+          data-url="https://cdn.rupom.dev"
+          data-target="blank"
+          aria-label="Download resume"
+        >
+          RESUME 🡫
+        </a>
+
+        <a
+          class="btn"
+          href="javascript:void(0)"
+          data-url="https://blog.rupom.dev"
+          data-target="blank"
+          aria-label="Read my blog"
+        >
+          BLOG ✍️
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div id="cursor"></div>
+
+  <script>
+    const canvas = document.getElementById("stars");
+    const ctx = canvas.getContext("2d");
+
+    let stars = [];
+    const STAR_COUNT = 140;
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener("resize", () => {
+      resizeCanvas();
+      createStars();
+    });
+
+    function createStars() {
+      stars = [];
+      for (let i = 0; i < STAR_COUNT; i++) {
+        stars.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          radius: Math.random() * 1.5 + 0.4,
+          alpha: Math.random(),
+          alphaChange: Math.random() * 0.02 + 0.005,
+          speedY: Math.random() * 0.2 + 0.05,
+        });
+      }
+    }
+
+    function drawStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      for (let star of stars) {
+        star.alpha += star.alphaChange;
+        if (star.alpha <= 0.1 || star.alpha >= 1) {
+          star.alphaChange *= -1;
+        }
+
+        star.y += star.speedY;
+        if (star.y > canvas.height) {
+          star.y = 0;
+          star.x = Math.random() * canvas.width;
+        }
+
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${star.alpha})`;
+        ctx.fill();
+      }
+      requestAnimationFrame(drawStars);
+    }
+
+    resizeCanvas();
+    createStars();
+    drawStars();
+
+    const phrases = [
+      "MICROSOFT STUDENT AMBASSADOR",
+      "CSE STUDENT ツ",
+      "PROBLEM SOLVER",
+      "TECH ENTHUSIAST",
+      "LIFELONG LEARNER",
+    ];
+
+    const typewriterEl = document.getElementById("typewriter");
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    function typeLoop() {
+      const currentPhrase = phrases[phraseIndex];
+      if (!deleting) {
+        charIndex++;
+        if (charIndex === currentPhrase.length + 5) {
+          deleting = true;
+        }
+      } else {
+        charIndex--;
+        if (charIndex === 0) {
+          deleting = false;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+        }
+      }
+
+      typewriterEl.textContent = currentPhrase.substring(
+        0,
+        Math.max(charIndex, 0)
+      );
+
+      const speed = deleting ? 60 : 90;
+      setTimeout(typeLoop, speed);
+    }
+
+    typeLoop();
+
+    function handleNavClick(event) {
+      event.preventDefault();
+      const el = event.currentTarget;
+      const url = el.getAttribute("data-url");
+      const target = el.getAttribute("data-target") || "blank";
+      if (!url) return;
+
+      if (target === "self") {
+        window.location.href = url;
+      } else {
+        window.open(url, "_blank", "noopener,noreferrer");
+      }
+    }
+
+    document.querySelectorAll("[data-url]").forEach((el) => {
+      el.addEventListener("click", handleNavClick);
+    });
+
+    const customCursor = document.getElementById("cursor");
+
+    document.addEventListener("mousemove", (e) => {
+      customCursor.style.opacity = 1;
+      customCursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+    });
+
+    document.addEventListener("mouseleave", () => {
+      customCursor.style.opacity = 0;
+    });
+
+    document.addEventListener("mousedown", () => {
+      customCursor.classList.add("cursor-click");
+    });
+
+    document.addEventListener("mouseup", () => {
+      customCursor.classList.remove("cursor-click");
+    });
+
+    const hoverTargets = document.querySelectorAll(".btn, .icon-link");
+    hoverTargets.forEach((el) => {
+      el.addEventListener("mouseenter", () => {
+        customCursor.classList.add("cursor-hover");
+      });
+      el.addEventListener("mouseleave", () => {
+        customCursor.classList.remove("cursor-hover");
+      });
+    });
+  </script>
 </body>
 </html>
