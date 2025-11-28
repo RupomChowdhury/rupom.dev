@@ -294,6 +294,20 @@ body {
 .skills .skill-tag:nth-child(22) { animation-delay: 1260ms; }
 .skills .skill-tag:nth-child(23) { animation-delay: 1320ms; }
 .skills .skill-tag:nth-child(24) { animation-delay: 1380ms; }
+.skills .skill-tag:nth-child(25) { animation-delay: 1440ms; }
+.skills .skill-tag:nth-child(26) { animation-delay: 1500ms; }
+.skills .skill-tag:nth-child(27) { animation-delay: 1560ms; }
+.skills .skill-tag:nth-child(28) { animation-delay: 1620ms; }
+.skills .skill-tag:nth-child(29) { animation-delay: 1680ms; }
+.skills .skill-tag:nth-child(30) { animation-delay: 1740ms; }
+.skills .skill-tag:nth-child(31) { animation-delay: 1800ms; }
+.skills .skill-tag:nth-child(32) { animation-delay: 1860ms; }
+.skills .skill-tag:nth-child(33) { animation-delay: 1920ms; }
+.skills .skill-tag:nth-child(34) { animation-delay: 1980ms; }
+.skills .skill-tag:nth-child(35) { animation-delay: 2040ms; }
+.skills .skill-tag:nth-child(36) { animation-delay: 2100ms; }
+.skills .skill-tag:nth-child(37) { animation-delay: 2160ms; }
+.skills .skill-tag:nth-child(38) { animation-delay: 2220ms; }  
 
 /* Skill tag color variants */
 .skill-tag.tag-java { border-color: rgba(255, 155, 17, 0.6); }
