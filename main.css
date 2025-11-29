@@ -316,7 +316,6 @@ body {
 .skills .skill-tag:nth-child(35) { animation-delay: 2040ms; }
 .skills .skill-tag:nth-child(36) { animation-delay: 2100ms; }
 .skills .skill-tag:nth-child(37) { animation-delay: 2160ms; }
-.skills .skill-tag:nth-child(38) { animation-delay: 2220ms; }   
 
 /* Skill tag color variants */
 .skill-tag.tag-java { border-color: rgba(255, 155, 17, 0.6); }
