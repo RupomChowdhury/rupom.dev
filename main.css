@@ -171,15 +171,21 @@ body {
 /* ------------------------------
    NAME + TAGLINE
 ------------------------------ */
-@keyframes nameGlowRTL {
+@keyframes innerGlowSoft {
   0% {
-    text-shadow: 0 4px 22px rgba(0, 0, 0, 0.6), 100px 0 30px rgba(76, 132, 206, 0);
+    text-shadow:
+      0 0 6px rgba(28, 215, 192, 0.35),
+      0 0 12px rgba(28, 215, 192, 0.25);
   }
   50% {
-    text-shadow: 0 4px 22px rgba(0, 0, 0, 0.6), 0 0 40px rgba(28, 215, 192, 0.8);
+    text-shadow:
+      0 0 10px rgba(28, 215, 192, 0.45),
+      0 0 18px rgba(28, 215, 192, 0.35);
   }
   100% {
-    text-shadow: 0 4px 22px rgba(0, 0, 0, 0.6), -100px 0 30px rgba(76, 132, 206, 0);
+    text-shadow:
+      0 0 6px rgba(28, 215, 192, 0.35),
+      0 0 12px rgba(28, 215, 192, 0.25);
   }
 }
 
@@ -188,9 +194,7 @@ body {
   font-weight: 700;
   letter-spacing: 0.14em;
   color: #ffffff;
-  white-space: nowrap; /* keep in one line */
-  margin-bottom: 12px; /* increased spacing below name */
-  animation: nameGlowRTL 6s ease-in-out infinite;
+  animation: innerGlowSoft 3s ease-in-out infinite;
 }
 
 .tagline {
