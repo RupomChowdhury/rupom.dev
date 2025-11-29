@@ -24,7 +24,7 @@ body {
 
 /* ------------------------------
    HERO SECTION (FULLSCREEN)
------------------------------- */
+   */
 .hero {
   position: relative;
   height: 100vh;
@@ -44,6 +44,11 @@ body {
   background-size: 220% 220%;
   animation: gradientMove 14s ease-in-out infinite;
   overflow: hidden;
+}
+
+/* Ensure the hero background uses the CSS var when available */
+.hero{
+  background: var(--hero-sky, linear-gradient(120deg,#071026,#0b1b33));
 }
 
 @keyframes gradientMove {
@@ -307,7 +312,7 @@ body {
 .skills .skill-tag:nth-child(35) { animation-delay: 2040ms; }
 .skills .skill-tag:nth-child(36) { animation-delay: 2100ms; }
 .skills .skill-tag:nth-child(37) { animation-delay: 2160ms; }
-.skills .skill-tag:nth-child(38) { animation-delay: 2220ms; }  
+.skills .skill-tag:nth-child(38) { animation-delay: 2220ms; }   
 
 /* Skill tag color variants */
 .skill-tag.tag-java { border-color: rgba(255, 155, 17, 0.6); }
