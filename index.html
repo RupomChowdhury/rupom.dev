@@ -22,9 +22,8 @@
   <meta name="twitter:image" content="./images/og-image.svg" />
 
   <link rel="stylesheet" href="./main.css" />
-
   <link rel="icon" type="image/png" href="./images/favicon.png" />
-  
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -46,222 +45,171 @@
 </head>
 
 <body>
-  <div class="hero">
-    <canvas id="stars"></canvas>
-    <div class="hero-overlay"></div>
 
-    <div class="hero-content">
-      <div class="badge">PORTFOLIO</div>
+  <div class="page">
 
-      <h1 class="name">MD. SHAHIN AKHTAR RUPOM</h1>
+    <!-- STAMP -->
+    <div class="stamp">Portfolio</div>
 
+    <!-- HEADER -->
+    <header class="header">
+      <h1 class="name"><span>Md. Shahin Akhtar Rupom</span></h1>
       <p class="tagline">
         <span id="typewriter" class="tagline-text"></span><span class="caret">▌</span>
       </p>
+    </header>
 
-      <div class="skills" aria-label="Skills">
-        <span class="skill-tag tag-java">#java</span>
-        <span class="skill-tag tag-spring">#spring</span>
-        <span class="skill-tag tag-spring">#springboot</span>
-        <span class="skill-tag tag-javascript">#javascript</span>
-       <!-- <span class="skill-tag tag-javascript">#typescript</span> -->
-        <span class="skill-tag tag-php">#php</span>
-        <span class="skill-tag tag-database">#mysql</span>
-        <span class="skill-tag tag-database">#mssql</span>
-        <span class="skill-tag tag-spring">#hibernate/jpa</span>
-       <!-- <span class="skill-tag tag-javascript">#express</span> -->
-        <span class="skill-tag tag-javascript">#html</span>
-        <span class="skill-tag tag-javascript">#css</span>
-       <!-- <span class="skill-tag tag-react">#react</span>
-        <span class="skill-tag tag-react">#nextjs</span> -->
-        <span class="skill-tag tag-react">#tailwind</span>
-        <span class="skill-tag tag-database">#sql</span>
-        <span class="skill-tag tag-database">#postgresql</span>
-        <span class="skill-tag tag-database">#mongodb</span>
-        <span class="skill-tag tag-cloud">#docker</span>
-        <span class="skill-tag tag-cloud">#kubernetes</span>
-       <!-- <span class="skill-tag tag-cloud">#aws</span> -->
-        <span class="skill-tag tag-cloud">#azure</span>
-        <span class="skill-tag tag-cloud">#gcp</span>
-        <span class="skill-tag tag-spring">#git</span>
-        <span class="skill-tag tag-spring">#github</span>
-        <span class="skill-tag tag-database">#restapi</span>
-        <span class="skill-tag tag-react">#graphql</span>
-        <span class="skill-tag tag-cloud">#microservices</span>
-        <span class="skill-tag tag-cloud">#devops</span>
-        <span class="skill-tag tag-cloud">#ci-cd</span>
-        <span class="skill-tag tag-cloud">#security</span>
-        <span class="skill-tag tag-cloud">#performance</span>
-        <span class="skill-tag tag-cloud">#linux</span>
-        <!-- <span class="skill-tag tag-cloud">#bash</span> -->
-        <span class="skill-tag tag-spring">#testing</span>
-        <span class="skill-tag tag-spring">#agile</span>
-        <span class="skill-tag tag-react">#opensource</span>
+    <!-- ABOUT -->
+    <section id="about" aria-labelledby="about-label">
+      <p class="section-label" id="about-label">About</p>
+      <div class="about">
+        <p>
+          Software engineer &amp; Microsoft Student Ambassador specialising in full-stack web
+          development and cloud-native architectures. I build scalable backend systems with
+          Java, Spring Boot, and Node.js, and modern frontends with React and Next.js.
+        </p>
+        <p>
+          My work spans RESTful APIs, GraphQL services, Docker containerisation, Kubernetes
+          orchestration, and cloud deployments across AWS, Azure, and GCP. I follow TDD,
+          CI/CD practices, and contribute to open-source projects.
+        </p>
       </div>
+    </section>
 
-      <section id="about" class="about" aria-labelledby="about-heading">
-        <h2 id="about-heading">About Me</h2>
-        <p>
-          I'm Md. Shahin Akhtar Rupom, a software engineer and Microsoft Student Ambassador specializing in full-stack web development and cloud-native architectures. I build scalable backend systems with Java, Spring Boot, and Node.js, and modern frontends with React and Next.js.
-        </p>
-        <p>
-          My work includes designing RESTful APIs and GraphQL services, containerizing applications with Docker, orchestrating with Kubernetes, and deploying to cloud platforms (AWS, Azure, GCP). I follow TDD, CI/CD practices and contribute to open source projects.
-        </p>
-      </section>
+    <!-- SKILLS -->
+    <section aria-labelledby="skills-label">
+      <p class="section-label" id="skills-label">Stack</p>
+      <div class="skills" aria-label="Skills">
+        <span class="skill-tag tag-java">java</span>
+        <span class="skill-tag tag-spring">spring</span>
+        <span class="skill-tag tag-spring">springboot</span>
+        <span class="skill-tag tag-javascript">javascript</span>
+        <span class="skill-tag tag-php">php</span>
+        <span class="skill-tag tag-database">mysql</span>
+        <span class="skill-tag tag-database">mssql</span>
+        <span class="skill-tag tag-spring">hibernate/jpa</span>
+        <span class="skill-tag tag-javascript">html</span>
+        <span class="skill-tag tag-javascript">css</span>
+        <span class="skill-tag tag-react">tailwind</span>
+        <span class="skill-tag tag-database">sql</span>
+        <span class="skill-tag tag-database">postgresql</span>
+        <span class="skill-tag tag-database">mongodb</span>
+        <span class="skill-tag tag-cloud">docker</span>
+        <span class="skill-tag tag-cloud">kubernetes</span>
+        <span class="skill-tag tag-cloud">azure</span>
+        <span class="skill-tag tag-cloud">gcp</span>
+        <span class="skill-tag tag-spring">git</span>
+        <span class="skill-tag tag-spring">github</span>
+        <span class="skill-tag tag-database">rest api</span>
+        <span class="skill-tag tag-react">graphql</span>
+        <span class="skill-tag tag-cloud">microservices</span>
+        <span class="skill-tag tag-cloud">devops</span>
+        <span class="skill-tag tag-cloud">ci/cd</span>
+        <span class="skill-tag tag-cloud">security</span>
+        <span class="skill-tag tag-cloud">linux</span>
+        <span class="skill-tag tag-spring">testing</span>
+        <span class="skill-tag tag-spring">agile</span>
+        <span class="skill-tag tag-react">open source</span>
+      </div>
+    </section>
 
+    <!-- CONNECT -->
+    <section aria-labelledby="connect-label">
+      <p class="section-label" id="connect-label">Connect</p>
       <div class="socials">
-        <a
-          class="icon-link"
-          href="javascript:void(0)"
-          data-url="https://github.com/RupomChowdhury"
-          data-target="blank"
-          aria-label="GITHUB"
-        >
+        <!-- GitHub -->
+        <a class="icon-link"
+           href="javascript:void(0)"
+           data-url="https://github.com/RupomChowdhury"
+           data-target="blank"
+           aria-label="GitHub">
           <svg width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
           </svg>
         </a>
 
-        <a
-          class="icon-link"
-          href="javascript:void(0)"
-          data-url="https://www.linkedin.com/in/md-shahin-akhtar-rupom"
-          data-target="blank"
-          aria-label="LINKEDIN"
-        >
+        <!-- LinkedIn -->
+        <a class="icon-link"
+           href="javascript:void(0)"
+           data-url="https://www.linkedin.com/in/md-shahin-akhtar-rupom"
+           data-target="blank"
+           aria-label="LinkedIn">
           <svg width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor">
             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.475-2.236-1.986-2.236-1.081 0-1.722.738-2.004 1.448-.103.249-.129.597-.129.945v5.412h-3.554s.047-8.733 0-9.639h3.554v1.366c.427-.659 1.191-1.599 2.898-1.599 2.117 0 3.704 1.385 3.704 4.362v5.51zM5.337 9.432c-1.142 0-1.884-.757-1.884-1.704 0-.962.742-1.705 1.925-1.705 1.183 0 1.884.743 1.907 1.705 0 .947-.724 1.704-1.925 1.704zm1.586 11.02H3.73V9.813h3.193v10.639zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
           </svg>
         </a>
 
-        <a
-          class="icon-link"
-          href="javascript:void(0)"
-          data-url="https://m.me/web.rupom"
-          data-target="blank"
-          aria-label="FACEBOOK"
-        >
+        <!-- Facebook / Messenger -->
+        <a class="icon-link"
+           href="javascript:void(0)"
+           data-url="https://m.me/web.rupom"
+           data-target="blank"
+           aria-label="Messenger">
           <svg width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor">
             <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
           </svg>
         </a>
       </div>
+    </section>
 
+    <!-- ACTION BUTTONS -->
+    <section aria-label="Actions">
+      <p class="section-label">Links</p>
       <div class="hero-buttons">
-        <a
-          class="btn"
-          href="javascript:void(0)"
-          data-url="mailto:mail@rupom.dev"
-          data-target="self"
-          aria-label="Contact via email"
-        >
-          CONTACT ✉
+        <a class="btn"
+           href="javascript:void(0)"
+           data-url="mailto:mail@rupom.dev"
+           data-target="self"
+           aria-label="Contact via email">
+          Contact ✉
         </a>
-
-        <a
-          class="btn"
-          href="javascript:void(0)"
-          data-url="https://cdn.rupom.dev"
-          data-target="blank"
-          aria-label="Download resume"
-        >
-          RESUME 🡫
+        <a class="btn"
+           href="javascript:void(0)"
+           data-url="https://cdn.rupom.dev"
+           data-target="blank"
+           aria-label="Download resume">
+          Resume ↓
         </a>
-
-        <a
-          class="btn"
-          href="javascript:void(0)"
-          data-url="https://docs.rupom.dev"
-          data-target="blank"
-          aria-label="Read my blog"
-        >
-          BLOG ✍️
+        <a class="btn"
+           href="javascript:void(0)"
+           data-url="https://docs.rupom.dev"
+           data-target="blank"
+           aria-label="Read my blog">
+          Blog ✍
         </a>
       </div>
-    </div>
-  </div>
+    </section>
 
+    <!-- FOOTER -->
+    <footer class="footer">
+      <span>rupom.dev</span>
+      <span>mail@rupom.dev</span>
+    </footer>
+
+  </div><!-- /.page -->
+
+  <!-- CUSTOM CURSOR -->
   <div id="cursor"></div>
 
   <script>
-    const canvas = document.getElementById("stars");
-    const ctx = canvas.getContext("2d");
-
-    let stars = [];
-    const STAR_COUNT = 140;
-
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-
-    window.addEventListener("resize", () => {
-      resizeCanvas();
-      createStars();
-    });
-
-    function createStars() {
-      stars = [];
-      for (let i = 0; i < STAR_COUNT; i++) {
-        stars.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          radius: Math.random() * 1.5 + 0.4,
-          alpha: Math.random(),
-          alphaChange: Math.random() * 0.02 + 0.005,
-          speedY: Math.random() * 0.2 + 0.05,
-        });
-      }
-    }
-
-    function drawStars() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      for (let star of stars) {
-        star.alpha += star.alphaChange;
-        if (star.alpha <= 0.1 || star.alpha >= 1) {
-          star.alphaChange *= -1;
-        }
-
-        star.y += star.speedY;
-        if (star.y > canvas.height) {
-          star.y = 0;
-          star.x = Math.random() * canvas.width;
-        }
-
-        ctx.beginPath();
-        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${star.alpha})`;
-        ctx.fill();
-      }
-      requestAnimationFrame(drawStars);
-    }
-
-    resizeCanvas();
-    createStars();
-    drawStars();
-
+    /* ── Typewriter ── */
     const phrases = [
-      "MICROSOFT STUDENT AMBASSADOR",
+      "Microsoft Student Ambassador",
       "Java Backend Developer",
-      "CSE STUDENT ツ",
-      "PROBLEM SOLVER",
-      "TECH ENTHUSIAST",
-      "LIFELONG LEARNER",
+      "CSE Student ツ",
+      "Problem Solver",
+      "Tech Enthusiast",
+      "Lifelong Learner",
     ];
 
     const typewriterEl = document.getElementById("typewriter");
-    let phraseIndex = 0;
-    let charIndex = 0;
-    let deleting = false;
+    let phraseIndex = 0, charIndex = 0, deleting = false;
 
     function typeLoop() {
-      const currentPhrase = phrases[phraseIndex];
+      const current = phrases[phraseIndex];
       if (!deleting) {
         charIndex++;
-        if (charIndex === currentPhrase.length + 5) {
-          deleting = true;
-        }
+        if (charIndex === current.length + 5) deleting = true;
       } else {
         charIndex--;
         if (charIndex === 0) {
@@ -269,64 +217,44 @@
           phraseIndex = (phraseIndex + 1) % phrases.length;
         }
       }
-
-      typewriterEl.textContent = currentPhrase.substring(
-        0,
-        Math.max(charIndex, 0)
-      );
-
-      const speed = deleting ? 60 : 90;
-      setTimeout(typeLoop, speed);
+      typewriterEl.textContent = current.substring(0, Math.max(charIndex, 0));
+      setTimeout(typeLoop, deleting ? 55 : 85);
     }
-
     typeLoop();
 
-    function handleNavClick(event) {
-      event.preventDefault();
-      const el = event.currentTarget;
+    /* ── Link delegation (anti-scrape) ── */
+    function handleNavClick(e) {
+      e.preventDefault();
+      const el = e.currentTarget;
       const url = el.getAttribute("data-url");
       const target = el.getAttribute("data-target") || "blank";
       if (!url) return;
-
       if (target === "self") {
         window.location.href = url;
       } else {
         window.open(url, "_blank", "noopener,noreferrer");
       }
     }
-
-    document.querySelectorAll("[data-url]").forEach((el) => {
+    document.querySelectorAll("[data-url]").forEach(el => {
       el.addEventListener("click", handleNavClick);
     });
 
-    const customCursor = document.getElementById("cursor");
+    /* ── Custom cursor ── */
+    const cur = document.getElementById("cursor");
 
-    document.addEventListener("mousemove", (e) => {
-      customCursor.style.opacity = 1;
-      customCursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+    document.addEventListener("mousemove", e => {
+      cur.style.opacity = 1;
+      cur.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
     });
+    document.addEventListener("mouseleave", () => { cur.style.opacity = 0; });
+    document.addEventListener("mousedown",  () => cur.classList.add("cursor-click"));
+    document.addEventListener("mouseup",    () => cur.classList.remove("cursor-click"));
 
-    document.addEventListener("mouseleave", () => {
-      customCursor.style.opacity = 0;
-    });
-
-    document.addEventListener("mousedown", () => {
-      customCursor.classList.add("cursor-click");
-    });
-
-    document.addEventListener("mouseup", () => {
-      customCursor.classList.remove("cursor-click");
-    });
-
-    const hoverTargets = document.querySelectorAll(".btn, .icon-link");
-    hoverTargets.forEach((el) => {
-      el.addEventListener("mouseenter", () => {
-        customCursor.classList.add("cursor-hover");
-      });
-      el.addEventListener("mouseleave", () => {
-        customCursor.classList.remove("cursor-hover");
-      });
+    document.querySelectorAll(".btn, .icon-link, .skill-tag").forEach(el => {
+      el.addEventListener("mouseenter", () => cur.classList.add("cursor-hover"));
+      el.addEventListener("mouseleave", () => cur.classList.remove("cursor-hover"));
     });
   </script>
+
 </body>
 </html>
