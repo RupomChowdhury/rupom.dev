@@ -1,8 +1,290 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-theme="dark">
 <head>
-<meta http-equiv="refresh" content="0; url=https://rupom.dev/">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Page Not Found | rupom.dev</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f7f4ef" media="(prefers-color-scheme: light)" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" /></noscript>
+  <link rel="icon" type="image/png" href="./images/favicon.png" />
+  <link rel="apple-touch-icon" href="./images/favicon.png" />
+  <style>
+    :root {
+      --bg:         #0a0a0a;
+      --bg-2:       #111111;
+      --border:     #242220;
+      --orange:     #f05a1a;
+      --orange-dim: rgba(240,90,26,0.10);
+      --white:      #f4f0eb;
+      --grey-1:     #c8c4bf;
+      --grey-2:     #7a7672;
+      --grey-3:     #3a3835;
+      --font:       'Plus Jakarta Sans', system-ui, sans-serif;
+      --font-code:  'JetBrains Mono', monospace;
+      --ease:       cubic-bezier(0.4,0,0.2,1);
+      --spring:     cubic-bezier(0.34,1.56,0.64,1);
+    }
+    [data-theme="light"] {
+      --bg:#f7f4ef; --bg-2:#edeae4; --border:#d0ccc5;
+      --orange:#d94f10; --orange-dim:rgba(217,79,16,0.10);
+      --white:#1a1714; --grey-1:#3a3632; --grey-2:#6b6660; --grey-3:#9a9690;
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { font-size:16px; }
+    body {
+      background:var(--bg); color:var(--white);
+      font-family:var(--font); min-height:100vh;
+      display:flex; flex-direction:column;
+      align-items:center; justify-content:center;
+      padding:24px; cursor:none;
+      -webkit-font-smoothing:antialiased;
+    }
+    a { text-decoration:none; color:inherit; }
+
+    /* noise overlay */
+    body::before {
+      content:''; position:fixed; inset:0; z-index:0; pointer-events:none;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+      background-repeat:repeat;
+    }
+
+    /* cursor */
+    #cursor {
+      position:fixed; top:0; left:0; width:9px; height:9px;
+      background:var(--orange); border-radius:50%;
+      transform:translate3d(-50%,-50%,0);
+      pointer-events:none; z-index:9999; opacity:0;
+      transition:width .14s var(--ease),height .14s var(--ease),opacity .2s ease;
+    }
+    #cursor.cursor-hover { width:32px; height:32px; background:var(--orange-dim); border:1.5px solid var(--orange); }
+    @media (hover:none) { #cursor { display:none; } body { cursor:auto; } }
+
+    /* main card */
+    .card {
+      position:relative; z-index:1;
+      background:var(--bg-2); border:1px solid var(--border);
+      border-radius:16px; padding:56px 48px;
+      max-width:560px; width:100%; text-align:center;
+      animation:fadeUp .55s cubic-bezier(0.4,0,0.2,1) forwards;
+      opacity:0;
+    }
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(16px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    .error-code {
+      font-family:var(--font); font-weight:800;
+      font-size:clamp(5rem,20vw,8rem);
+      line-height:1; letter-spacing:-0.04em;
+      color:var(--border);
+      /* orange gradient on the "4"s */
+      background:linear-gradient(135deg, var(--orange) 0%, var(--grey-3) 60%);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+      margin-bottom:8px;
+      user-select:none;
+    }
+
+    .eyebrow {
+      font-family:var(--font-code); font-size:0.65rem;
+      letter-spacing:0.26em; text-transform:uppercase;
+      color:var(--orange); margin-bottom:20px;
+      display:flex; align-items:center; justify-content:center; gap:10px;
+    }
+    .eyebrow::before, .eyebrow::after {
+      content:''; width:28px; height:1px; background:var(--orange);
+    }
+
+    .title {
+      font-family:var(--font); font-weight:700;
+      font-size:clamp(1.4rem,4vw,1.9rem);
+      letter-spacing:-0.02em; color:var(--white);
+      margin-bottom:12px; line-height:1.25;
+    }
+
+    .desc {
+      font-family:var(--font); font-size:0.875rem;
+      color:var(--grey-2); line-height:1.8; margin-bottom:36px;
+    }
+
+    .actions {
+      display:flex; gap:12px; justify-content:center; flex-wrap:wrap;
+    }
+
+    .btn-fill {
+      display:inline-flex; align-items:center; gap:8px;
+      padding:11px 24px; background:var(--orange); color:#fff;
+      font-family:var(--font); font-size:0.8rem; font-weight:600;
+      border:1.5px solid var(--orange); border-radius:6px; cursor:none;
+      transition:background .2s ease, box-shadow .2s ease, transform .2s var(--spring);
+    }
+    .btn-fill:hover { background:#ff6820; box-shadow:0 0 24px rgba(240,90,26,.4); transform:translateY(-2px); }
+
+    .btn-outline {
+      display:inline-flex; align-items:center; gap:8px;
+      padding:11px 24px; background:transparent; color:var(--grey-1);
+      font-family:var(--font); font-size:0.8rem; font-weight:600;
+      border:1.5px solid var(--grey-3); border-radius:6px; cursor:none;
+      transition:border-color .2s ease, color .2s ease, transform .2s var(--spring);
+    }
+    .btn-outline:hover { border-color:var(--orange); color:var(--orange); transform:translateY(-2px); }
+
+    /* brand at top */
+    .brand {
+      position:fixed; top:24px; left:50%;
+      transform:translateX(-50%);
+      display:flex; align-items:center; gap:10px;
+      z-index:10; cursor:none; text-decoration:none;
+    }
+    .mark-box {
+      width:34px; height:34px; border-radius:7px;
+      background:var(--orange); display:flex;
+      align-items:center; justify-content:center;
+      font-family:var(--font); font-weight:800; font-size:0.95rem; color:#fff;
+    }
+    .mark-name {
+      font-family:var(--font); font-weight:700;
+      font-size:0.88rem; color:var(--white);
+    }
+    .mark-role {
+      font-family:var(--font-code); font-size:0.58rem;
+      color:var(--grey-2); letter-spacing:0.14em; text-transform:uppercase;
+    }
+    .mark-label { display:flex; flex-direction:column; line-height:1.2; }
+
+    /* theme toggle */
+    .theme-btn {
+      position:fixed; top:24px; right:24px; z-index:10;
+      background:var(--bg-2); border:1px solid var(--border);
+      border-radius:8px; width:36px; height:36px;
+      display:flex; align-items:center; justify-content:center;
+      color:var(--grey-2); cursor:none;
+      transition:color .2s ease, border-color .2s ease;
+    }
+    .theme-btn:hover { color:var(--orange); border-color:var(--orange); }
+    [data-theme="light"] .icon-sun { display:none; }
+    [data-theme="dark"]  .icon-moon { display:none; }
+
+    /* suggestions */
+    .suggestions {
+      position:relative; z-index:1;
+      margin-top:28px; display:flex; gap:12px;
+      flex-wrap:wrap; justify-content:center;
+    }
+    .suggest-link {
+      font-family:var(--font-code); font-size:0.65rem;
+      letter-spacing:0.1em; color:var(--grey-2);
+      display:flex; align-items:center; gap:6px;
+      padding:6px 14px; border:1px solid var(--border);
+      border-radius:999px; background:var(--bg-2);
+      cursor:none; transition:color .2s ease, border-color .2s ease, background .2s ease;
+    }
+    .suggest-link:hover { color:var(--orange); border-color:var(--orange); background:var(--orange-dim); }
+
+    /* responsive */
+    @media (max-width:480px) {
+      .card { padding:36px 24px; }
+      .actions { flex-direction:column; }
+      .btn-fill, .btn-outline { justify-content:center; }
+      .brand { top:16px; }
+      .theme-btn { top:16px; right:16px; }
+    }
+  </style>
 </head>
 <body>
+
+  <!-- Brand -->
+  <a class="brand" href="/" aria-label="Back to rupom.dev home">
+    <div class="mark-box">R</div>
+    <div class="mark-label">
+      <span class="mark-name">Rupom</span>
+      <span class="mark-role">Portfolio</span>
+    </div>
+  </a>
+
+  <!-- Theme toggle -->
+  <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
+    <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    <svg class="icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  </button>
+
+  <!-- Main card -->
+  <div class="card" role="main">
+    <p class="error-code" aria-label="Error 404">404</p>
+    <p class="eyebrow">Page Not Found</p>
+    <h1 class="title">Looks like this page doesn't exist.</h1>
+    <p class="desc">
+      The page you're looking for may have been moved, deleted,
+      or never existed. Let's get you back on track.
+    </p>
+    <div class="actions">
+      <a class="btn-fill" href="/">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Go Home
+      </a>
+      <a class="btn-outline" href="javascript:void(0)" onclick="history.back()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Go Back
+      </a>
+    </div>
+  </div>
+
+  <!-- Quick nav suggestions -->
+  <div class="suggestions" role="navigation" aria-label="Quick links">
+    <a class="suggest-link" href="/#about">About</a>
+    <a class="suggest-link" href="/#projects">Work</a>
+    <a class="suggest-link" href="/#skills">Skills</a>
+    <a class="suggest-link" href="/#contact">Contact</a>
+    <a class="suggest-link" href="javascript:void(0)" data-url="https://cdn.rupom.dev" data-target="blank">Resume</a>
+  </div>
+
+  <div id="cursor" aria-hidden="true"></div>
+
+  <script>
+    /* theme */
+    const root = document.documentElement;
+    const THEME_KEY = 'rupom-theme';
+    const saved = localStorage.getItem(THEME_KEY);
+    if (saved) root.setAttribute('data-theme', saved);
+    function applyTheme(t) {
+      root.setAttribute('data-theme', t);
+      localStorage.setItem(THEME_KEY, t);
+    }
+    document.getElementById('themeBtn').addEventListener('click', () => {
+      applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    });
+
+    /* link delegation */
+    document.querySelectorAll('[data-url]').forEach(el => {
+      el.addEventListener('click', e => {
+        e.preventDefault();
+        const url = el.dataset.url, target = el.dataset.target || 'blank';
+        target === 'self' ? (window.location.href = url) : window.open(url, '_blank', 'noopener,noreferrer');
+      });
+    });
+
+    /* cursor */
+    if (window.matchMedia('(pointer:fine)').matches) {
+      const cur = document.getElementById('cursor');
+      document.addEventListener('mousemove', e => {
+        cur.style.opacity = 1;
+        cur.style.transform = `translate3d(${e.clientX}px,${e.clientY}px,0)`;
+      });
+      document.addEventListener('mouseleave', () => cur.style.opacity = 0);
+      document.addEventListener('mousedown', () => cur.classList.add('cursor-hover'));
+      document.addEventListener('mouseup',   () => cur.classList.remove('cursor-hover'));
+      document.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('mouseenter', () => cur.classList.add('cursor-hover'));
+        el.addEventListener('mouseleave', () => cur.classList.remove('cursor-hover'));
+      });
+    }
+  </script>
 </body>
 </html>
