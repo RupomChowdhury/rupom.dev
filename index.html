@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RUPOM — PERSONAL PAGE</title>
+  <title>Rupom — Software Engineer</title>
 
   <meta name="description" content="Md. Shahin Akhtar Rupom — Software engineer and CSE student. Full‑stack developer skilled in Java, Spring, Spring Boot, JavaScript, REST APIs, GraphQL, Docker, Kubernetes, Azure, SQL and more." />
   <meta name="keywords" content="Md. Shahin Akhtar Rupom, Rupom Chowdhury, Rupom, software engineer, full stack developer, Java, Spring, Spring Boot, JavaScript, Docker, Kubernetes, Azure, PostgreSQL, MongoDB, DevOps, CI/CD, REST API, GraphQL" />
@@ -46,214 +46,455 @@
 
 <body>
 
-  <div class="page">
+  <!-- ═══════════════════════════════
+       NAVBAR
+  ════════════════════════════════ -->
+  <nav class="navbar">
+    <div class="container">
+      <a class="nav-brand" href="#hero" data-scroll="hero">
+        <span class="brand-name">Rupom</span>
+        <span class="brand-role">Software Engineer</span>
+      </a>
+      <ul class="nav-links">
+        <li><a class="nav-link active" href="#hero"    data-scroll="hero">Home</a></li>
+        <li><a class="nav-link"        href="#about"   data-scroll="about">About</a></li>
+        <li><a class="nav-link"        href="#skills"  data-scroll="skills">Skills</a></li>
+        <li><a class="nav-link"        href="#contact" data-scroll="contact">Contact</a></li>
+        <li>
+          <a class="nav-link"
+             href="javascript:void(0)"
+             data-url="https://cdn.rupom.dev"
+             data-target="blank"
+             style="color:var(--orange);border-color:rgba(232,93,26,0.35);">
+            Resume ↓
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-    <!-- STAMP -->
-    <div class="stamp">Portfolio</div>
+  <!-- ═══════════════════════════════
+       HERO
+  ════════════════════════════════ -->
+  <section id="hero">
+    <div class="container">
+      <div class="hero-inner">
 
-    <!-- HEADER -->
-    <header class="header">
-      <h1 class="name"><span>Md. Shahin Akhtar Rupom</span></h1>
-      <p class="tagline">
-        <span id="typewriter" class="tagline-text"></span><span class="caret">▌</span>
+        <div class="hero-text">
+          <p class="hero-greeting fade-in fade-in-1">Portfolio</p>
+
+          <h1 class="hero-title fade-in fade-in-2">
+            Hi — I'm<br>
+            <span class="highlight">Md. Shahin<br>Akhtar Rupom.</span>
+          </h1>
+
+          <p class="hero-tagline fade-in fade-in-3">
+            <span id="typewriter" class="tagline-text"></span><span class="caret">▌</span>
+          </p>
+
+          <div class="hero-meta fade-in fade-in-4">
+            <span class="hero-meta-item">
+              <!-- location icon -->
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              Bangladesh
+            </span>
+            <span class="hero-meta-item">
+              <span class="dot"></span>
+              Open to Opportunities
+            </span>
+          </div>
+
+          <div class="hero-actions fade-in fade-in-5">
+            <a class="btn-primary"
+               href="javascript:void(0)"
+               data-url="mailto:mail@rupom.dev"
+               data-target="self">
+              <!-- mail icon -->
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              Contact Me
+            </a>
+            <a class="btn-secondary"
+               href="javascript:void(0)"
+               data-url="https://cdn.rupom.dev"
+               data-target="blank">
+              <!-- download icon -->
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              View Resume
+            </a>
+            <a class="btn-ghost"
+               href="javascript:void(0)"
+               data-url="https://docs.rupom.dev"
+               data-target="blank">
+              <span class="underline-link">Read Blog ✍</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Avatar / initials -->
+        <div class="hero-avatar-wrap fade-in fade-in-6">
+          <div class="hero-avatar">
+            <span class="hero-avatar-initials">R.</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       ABOUT
+  ════════════════════════════════ -->
+  <section id="about">
+    <div class="container">
+      <div class="section-heading reveal">
+        <h2>About Me</h2>
+      </div>
+    </section>
+
+      <div class="about-grid reveal">
+        <div class="about-text">
+          <p>
+            I'm <em>Md. Shahin Akhtar Rupom</em>, a software engineer and
+            <em>Microsoft Student Ambassador</em> specialising in full-stack web
+            development and cloud-native architectures.
+          </p>
+          <p>
+            I build scalable backend systems with <em>Java, Spring Boot</em>, and
+            Node.js, paired with modern frontends using React and Next.js. My work
+            spans RESTful APIs, GraphQL services, Docker containerisation, Kubernetes
+            orchestration, and cloud deployments across AWS, Azure, and GCP.
+          </p>
+          <p>
+            I follow <em>TDD and CI/CD</em> practices, contribute to open-source
+            projects, and enjoy turning complex problems into clean, maintainable solutions.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <div class="about-card-item">
+            <span class="about-card-label">Status</span>
+            <span class="about-card-value"><span class="accent">●</span> Open to Internships &amp; Junior Roles</span>
+          </div>
+          <div class="about-card-item">
+            <span class="about-card-label">Location</span>
+            <span class="about-card-value">Bangladesh</span>
+          </div>
+          <div class="about-card-item">
+            <span class="about-card-label">Focus</span>
+            <span class="about-card-value">Backend · Cloud · DevOps</span>
+          </div>
+          <div class="about-card-item">
+            <span class="about-card-label">Email</span>
+            <span class="about-card-value">mail@rupom.dev</span>
+          </div>
+          <div class="about-card-item">
+            <span class="about-card-label">Blog</span>
+            <span class="about-card-value">docs.rupom.dev</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       SKILLS
+  ════════════════════════════════ -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-heading reveal">
+        <h2>Skills &amp; Tools</h2>
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-category reveal">
+          <div class="skill-category-title">Backend</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">Spring</span>
+            <span class="skill-tag">Spring Boot</span>
+            <span class="skill-tag">Hibernate / JPA</span>
+            <span class="skill-tag">REST API</span>
+            <span class="skill-tag">GraphQL</span>
+            <span class="skill-tag">PHP</span>
+            <span class="skill-tag">Node.js</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <div class="skill-category-title">Frontend</div>
+          <div class="skill-tags">
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Tailwind CSS</span>
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Next.js</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <div class="skill-category-title">Database</div>
+          <div class="skill-tags">
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">MSSQL</span>
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">SQL</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <div class="skill-category-title">Cloud &amp; DevOps</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Kubernetes</span>
+            <span class="skill-tag">Azure</span>
+            <span class="skill-tag">GCP</span>
+            <span class="skill-tag">CI/CD</span>
+            <span class="skill-tag">Linux</span>
+            <span class="skill-tag">Microservices</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <div class="skill-category-title">Tools &amp; Practices</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag">Testing / TDD</span>
+            <span class="skill-tag">Agile / Scrum</span>
+            <span class="skill-tag">Security</span>
+            <span class="skill-tag">Open Source</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <div class="skill-category-title">Also Known For</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Microsoft Student Ambassador</span>
+            <span class="skill-tag">Problem Solving</span>
+            <span class="skill-tag">Performance</span>
+            <span class="skill-tag">System Design</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       CONTACT
+  ════════════════════════════════ -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-heading reveal">
+        <h2>Contact Me</h2>
+      </div>
+
+      <div class="contact-card reveal">
+
+        <!-- LEFT -->
+        <div class="contact-left">
+          <h3 class="contact-title">Get in <span class="highlight">Touch</span></h3>
+          <p class="contact-desc">
+            I'm available for internships, freelance projects, and junior roles.
+            Send a note and I'll reach out with a tailored reply.
+          </p>
+
+          <ul class="contact-info-list">
+            <li class="contact-info-item">
+              <span class="contact-info-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </span>
+              mail@rupom.dev
+            </li>
+            <li class="contact-info-item">
+              <span class="contact-info-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </span>
+              Bangladesh
+            </li>
+          </ul>
+
+          <div class="contact-socials">
+            <!-- GitHub -->
+            <a class="social-icon-btn"
+               href="javascript:void(0)"
+               data-url="https://github.com/RupomChowdhury"
+               data-target="blank"
+               aria-label="GitHub">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
+
+            <!-- LinkedIn -->
+            <a class="social-icon-btn"
+               href="javascript:void(0)"
+               data-url="https://www.linkedin.com/in/md-shahin-akhtar-rupom"
+               data-target="blank"
+               aria-label="LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.475-2.236-1.986-2.236-1.081 0-1.722.738-2.004 1.448-.103.249-.129.597-.129.945v5.412h-3.554s.047-8.733 0-9.639h3.554v1.366c.427-.659 1.191-1.599 2.898-1.599 2.117 0 3.704 1.385 3.704 4.362v5.51zM5.337 9.432c-1.142 0-1.884-.757-1.884-1.704 0-.962.742-1.705 1.925-1.705 1.183 0 1.884.743 1.907 1.705 0 .947-.724 1.704-1.925 1.704zm1.586 11.02H3.73V9.813h3.193v10.639zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
+              </svg>
+            </a>
+
+            <!-- Facebook / Messenger -->
+            <a class="social-icon-btn"
+               href="javascript:void(0)"
+               data-url="https://m.me/web.rupom"
+               data-target="blank"
+               aria-label="Messenger">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT: FORM -->
+        <form class="contact-form" onsubmit="handleFormSubmit(event)">
+          <div class="form-row">
+            <input class="form-input" type="text"  placeholder="Full Name"     autocomplete="name" />
+            <input class="form-input" type="email" placeholder="Email Address" autocomplete="email" />
+          </div>
+          <textarea class="form-textarea" placeholder="Tell me about your project..."></textarea>
+          <button class="btn-submit" type="submit">
+            <!-- send icon -->
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"/>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+            Send Message
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       FOOTER
+  ════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">
+        © 2026 <span>Md. Shahin Akhtar Rupom</span> · Built with Passion
       </p>
-    </header>
-
-    <!-- ABOUT -->
-    <section id="about" aria-labelledby="about-label">
-      <p class="section-label" id="about-label">About</p>
-      <div class="about">
-        <p>
-          Software engineer &amp; Microsoft Student Ambassador specialising in full-stack web
-          development and cloud-native architectures. I build scalable backend systems with
-          Java, Spring Boot, and Node.js, and modern frontends with React and Next.js.
-        </p>
-        <p>
-          My work spans RESTful APIs, GraphQL services, Docker containerisation, Kubernetes
-          orchestration, and cloud deployments across AWS, Azure, and GCP. I follow TDD,
-          CI/CD practices, and contribute to open-source projects.
-        </p>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section aria-labelledby="skills-label">
-      <p class="section-label" id="skills-label">Stack</p>
-      <div class="skills" aria-label="Skills">
-        <span class="skill-tag tag-java">java</span>
-        <span class="skill-tag tag-spring">spring</span>
-        <span class="skill-tag tag-spring">springboot</span>
-        <span class="skill-tag tag-javascript">javascript</span>
-        <span class="skill-tag tag-php">php</span>
-        <span class="skill-tag tag-database">mysql</span>
-        <span class="skill-tag tag-database">mssql</span>
-        <span class="skill-tag tag-spring">hibernate/jpa</span>
-        <span class="skill-tag tag-javascript">html</span>
-        <span class="skill-tag tag-javascript">css</span>
-        <span class="skill-tag tag-react">tailwind</span>
-        <span class="skill-tag tag-database">sql</span>
-        <span class="skill-tag tag-database">postgresql</span>
-        <span class="skill-tag tag-database">mongodb</span>
-        <span class="skill-tag tag-cloud">docker</span>
-        <span class="skill-tag tag-cloud">kubernetes</span>
-        <span class="skill-tag tag-cloud">azure</span>
-        <span class="skill-tag tag-cloud">gcp</span>
-        <span class="skill-tag tag-spring">git</span>
-        <span class="skill-tag tag-spring">github</span>
-        <span class="skill-tag tag-database">rest api</span>
-        <span class="skill-tag tag-react">graphql</span>
-        <span class="skill-tag tag-cloud">microservices</span>
-        <span class="skill-tag tag-cloud">devops</span>
-        <span class="skill-tag tag-cloud">ci/cd</span>
-        <span class="skill-tag tag-cloud">security</span>
-        <span class="skill-tag tag-cloud">linux</span>
-        <span class="skill-tag tag-spring">testing</span>
-        <span class="skill-tag tag-spring">agile</span>
-        <span class="skill-tag tag-react">open source</span>
-      </div>
-    </section>
-
-    <!-- CONNECT -->
-    <section aria-labelledby="connect-label">
-      <p class="section-label" id="connect-label">Connect</p>
-      <div class="socials">
-        <!-- GitHub -->
-        <a class="icon-link"
-           href="javascript:void(0)"
-           data-url="https://github.com/RupomChowdhury"
-           data-target="blank"
-           aria-label="GitHub">
-          <svg width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-          </svg>
-        </a>
-
-        <!-- LinkedIn -->
-        <a class="icon-link"
-           href="javascript:void(0)"
-           data-url="https://www.linkedin.com/in/md-shahin-akhtar-rupom"
-           data-target="blank"
-           aria-label="LinkedIn">
-          <svg width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.475-2.236-1.986-2.236-1.081 0-1.722.738-2.004 1.448-.103.249-.129.597-.129.945v5.412h-3.554s.047-8.733 0-9.639h3.554v1.366c.427-.659 1.191-1.599 2.898-1.599 2.117 0 3.704 1.385 3.704 4.362v5.51zM5.337 9.432c-1.142 0-1.884-.757-1.884-1.704 0-.962.742-1.705 1.925-1.705 1.183 0 1.884.743 1.907 1.705 0 .947-.724 1.704-1.925 1.704zm1.586 11.02H3.73V9.813h3.193v10.639zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
-          </svg>
-        </a>
-
-        <!-- Facebook / Messenger -->
-        <a class="icon-link"
-           href="javascript:void(0)"
-           data-url="https://m.me/web.rupom"
-           data-target="blank"
-           aria-label="Messenger">
-          <svg width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-          </svg>
-        </a>
-      </div>
-    </section>
-
-    <!-- ACTION BUTTONS -->
-    <section aria-label="Actions">
-      <p class="section-label">Links</p>
-      <div class="hero-buttons">
-        <a class="btn"
-           href="javascript:void(0)"
-           data-url="mailto:mail@rupom.dev"
-           data-target="self"
-           aria-label="Contact via email">
-          Contact ✉
-        </a>
-        <a class="btn"
-           href="javascript:void(0)"
-           data-url="https://cdn.rupom.dev"
-           data-target="blank"
-           aria-label="Download resume">
-          Resume ↓
-        </a>
-        <a class="btn"
-           href="javascript:void(0)"
-           data-url="https://docs.rupom.dev"
-           data-target="blank"
-           aria-label="Read my blog">
-          Blog ✍
-        </a>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-      <span>rupom.dev</span>
-      <span>mail@rupom.dev</span>
-    </footer>
-
-  </div><!-- /.page -->
+    </div>
+  </footer>
 
   <!-- CUSTOM CURSOR -->
   <div id="cursor"></div>
 
+  <!-- ═══════════════════════════════
+       SCRIPTS
+  ════════════════════════════════ -->
   <script>
     /* ── Typewriter ── */
     const phrases = [
       "Microsoft Student Ambassador",
       "Java Backend Developer",
+      "Full-Stack Engineer",
       "CSE Student ツ",
       "Problem Solver",
       "Tech Enthusiast",
-      "Lifelong Learner",
     ];
-
-    const typewriterEl = document.getElementById("typewriter");
-    let phraseIndex = 0, charIndex = 0, deleting = false;
-
+    const tw = document.getElementById("typewriter");
+    let pi = 0, ci = 0, del = false;
     function typeLoop() {
-      const current = phrases[phraseIndex];
-      if (!deleting) {
-        charIndex++;
-        if (charIndex === current.length + 5) deleting = true;
-      } else {
-        charIndex--;
-        if (charIndex === 0) {
-          deleting = false;
-          phraseIndex = (phraseIndex + 1) % phrases.length;
-        }
-      }
-      typewriterEl.textContent = current.substring(0, Math.max(charIndex, 0));
-      setTimeout(typeLoop, deleting ? 55 : 85);
+      const cur = phrases[pi];
+      del ? ci-- : ci++;
+      if (!del && ci === cur.length + 4) del = true;
+      if (del && ci === 0) { del = false; pi = (pi + 1) % phrases.length; }
+      tw.textContent = cur.substring(0, Math.max(ci, 0));
+      setTimeout(typeLoop, del ? 50 : 80);
     }
     typeLoop();
 
-    /* ── Link delegation (anti-scrape) ── */
+    /* ── Anti-scrape link delegation ── */
     function handleNavClick(e) {
       e.preventDefault();
       const el = e.currentTarget;
       const url = el.getAttribute("data-url");
       const target = el.getAttribute("data-target") || "blank";
       if (!url) return;
-      if (target === "self") {
-        window.location.href = url;
-      } else {
-        window.open(url, "_blank", "noopener,noreferrer");
-      }
+      target === "self" ? (window.location.href = url) : window.open(url, "_blank", "noopener,noreferrer");
     }
-    document.querySelectorAll("[data-url]").forEach(el => {
-      el.addEventListener("click", handleNavClick);
-    });
+    document.querySelectorAll("[data-url]").forEach(el => el.addEventListener("click", handleNavClick));
 
     /* ── Custom cursor ── */
     const cur = document.getElementById("cursor");
-
     document.addEventListener("mousemove", e => {
       cur.style.opacity = 1;
-      cur.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+      cur.style.transform = `translate3d(${e.clientX}px,${e.clientY}px,0)`;
     });
-    document.addEventListener("mouseleave", () => { cur.style.opacity = 0; });
+    document.addEventListener("mouseleave", () => cur.style.opacity = 0);
     document.addEventListener("mousedown",  () => cur.classList.add("cursor-click"));
     document.addEventListener("mouseup",    () => cur.classList.remove("cursor-click"));
-
-    document.querySelectorAll(".btn, .icon-link, .skill-tag").forEach(el => {
+    document.querySelectorAll(".btn-primary,.btn-secondary,.btn-ghost,.btn-submit,.nav-link,.social-icon-btn,.skill-tag,.form-input,.form-textarea,.nav-brand").forEach(el => {
       el.addEventListener("mouseenter", () => cur.classList.add("cursor-hover"));
       el.addEventListener("mouseleave", () => cur.classList.remove("cursor-hover"));
     });
+
+    /* ── Scroll reveal ── */
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("visible"); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+    /* ── Active nav link on scroll ── */
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".nav-link[data-scroll]");
+    const navObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          navLinks.forEach(l => l.classList.remove("active"));
+          const active = document.querySelector(`.nav-link[data-scroll="${e.target.id}"]`);
+          if (active) active.classList.add("active");
+        }
+      });
+    }, { threshold: 0.4 });
+    sections.forEach(s => navObserver.observe(s));
+
+    /* ── Smooth scroll on nav click ── */
+    document.querySelectorAll("[data-scroll]").forEach(el => {
+      el.addEventListener("click", e => {
+        e.preventDefault();
+        const target = document.getElementById(el.dataset.scroll);
+        if (target) target.scrollIntoView({ behavior: "smooth" });
+      });
+    });
+
+    /* ── Contact form (mailto fallback) ── */
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      const name    = form.querySelector('input[type="text"]').value.trim();
+      const email   = form.querySelector('input[type="email"]').value.trim();
+      const message = form.querySelector('textarea').value.trim();
+      if (!name || !email || !message) return;
+      const subject = encodeURIComponent(`Portfolio contact from ${name}`);
+      const body    = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+      window.location.href = `mailto:mail@rupom.dev?subject=${subject}&body=${body}`;
+    }
   </script>
 
 </body>
