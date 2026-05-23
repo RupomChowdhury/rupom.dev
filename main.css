@@ -661,9 +661,7 @@ body::before {
 
   .hero-inner { grid-template-columns:1fr; gap:24px; }
   /* FIX: move avatar above the text on mobile */
-  .hero-avatar-wrap { order:-1; flex-direction:row; gap:16px; align-items:center; justify-content:flex-start; width:100%; }
-  .hero-avatar { width:80px; height:80px; border-radius:12px; flex-shrink:0; }
-  .avatar-status { font-size:0.58rem; }
+  .hero-avatar-wrap { display:none; }
   .about-top { grid-template-columns:1fr; gap:28px; }
   .about-facts { grid-template-columns:repeat(2,1fr); }
   .skills-bento { grid-template-columns:1fr 1fr; }
